@@ -1,13 +1,13 @@
 :root {
-  --bg: #040d18;
-  --card-bg: #0e1a2b;
-  --panel-bg: #15213a;
-  --accent: #65ffe0;
-  --accent-2: #8ecbff;
-  --text: #f4f6fb;
-  --muted: #9eb2d4;
-  --border: rgba(255, 255, 255, 0.08);
-  --shadow: 0 18px 70px rgba(4, 14, 32, 0.55);
+  --bg: #030813;
+  --card-bg: #0b1527;
+  --panel-bg: #132037;
+  --accent: #6bffe4;
+  --accent-2: #9fd5ff;
+  --text: #f6f8fc;
+  --muted: #aabbdc;
+  --border: rgba(255, 255, 255, 0.09);
+  --shadow: 0 20px 60px rgba(3, 8, 19, 0.7);
   --radius: 18px;
   --transition: 0.25s ease;
 }
@@ -20,8 +20,8 @@ body {
   margin: 0;
   min-height: 100vh;
   font-family: "Space Grotesk", "Inter", "Segoe UI", sans-serif;
-  background: radial-gradient(circle at top, rgba(52, 138, 199, 0.25), transparent 50%),
-    linear-gradient(120deg, #040d18 0%, #080d22 40%, #03121c 100%);
+  background: radial-gradient(circle at top, rgba(79, 157, 255, 0.2), transparent 60%),
+    linear-gradient(120deg, #030813 0%, #040f1f 45%, #02161f 100%);
   color: var(--text);
   line-height: 1.6;
 }
@@ -44,6 +44,16 @@ h4 {
   line-height: 1.2;
 }
 
+pre {
+  margin: 0;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius);
+  background: var(--panel-bg);
+  border: 1px solid var(--border);
+  color: var(--accent-2);
+  white-space: pre-wrap;
+}
+
 .eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -56,7 +66,7 @@ nav.main-nav {
   position: sticky;
   top: 0;
   backdrop-filter: blur(18px);
-  background: rgba(4, 13, 24, 0.92);
+  background: rgba(3, 8, 19, 0.9);
   border-bottom: 1px solid var(--border);
   padding: 1rem clamp(1rem, 4vw, 4rem);
   z-index: 20;
@@ -71,6 +81,7 @@ nav.main-nav ul {
   gap: 1.25rem;
   margin: 0;
   padding: 0;
+  flex-wrap: wrap;
 }
 
 nav.main-nav a {
@@ -89,7 +100,29 @@ nav.main-nav a:hover {
 }
 
 .hero__content {
-  max-width: 960px;
+  max-width: 1000px;
+}
+
+.hero__chips {
+  margin-top: 1.2rem;
+}
+
+.chip-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.chip {
+  padding: 0.45rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--accent-2);
+  font-size: 0.85rem;
 }
 
 .hero__cta {
@@ -101,7 +134,7 @@ nav.main-nav a:hover {
 
 .hero__stats {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1rem;
 }
 
@@ -128,7 +161,7 @@ nav.main-nav a:hover {
 
 .btn.primary {
   background: linear-gradient(120deg, var(--accent), var(--accent-2));
-  color: #02111b;
+  color: #031220;
 }
 
 .btn.ghost {
@@ -145,13 +178,13 @@ nav.main-nav a:hover {
 }
 
 .section__intro {
-  max-width: 780px;
+  max-width: 820px;
   margin-bottom: 2rem;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.25rem;
 }
 
@@ -175,6 +208,18 @@ nav.main-nav a:hover {
 
 .card h3 {
   font-size: 1.2rem;
+}
+
+.card ul {
+  margin: 0 0 1rem 1.1rem;
+  padding: 0;
+  color: var(--muted);
+}
+
+.card__tip {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--accent-2);
 }
 
 .timeline {
@@ -226,7 +271,7 @@ nav.main-nav a:hover {
 
 .section-card.open .card__panel {
   opacity: 1;
-  max-height: 600px;
+  max-height: 700px;
 }
 
 .section-card button {
@@ -259,7 +304,7 @@ nav.main-nav a:hover {
 
 .domain-controls button.active {
   background: var(--accent);
-  color: #031019;
+  color: #031220;
 }
 
 .domain-panel h3 {
@@ -267,8 +312,8 @@ nav.main-nav a:hover {
 }
 
 .domain-panel ul {
-  margin: 0;
-  padding-left: 1.1rem;
+  margin: 0 0 1rem 1.1rem;
+  padding: 0;
   color: var(--muted);
 }
 
@@ -323,10 +368,6 @@ footer {
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
-  }
-
-  nav.main-nav ul {
-    flex-wrap: wrap;
   }
 
   .timeline__item {

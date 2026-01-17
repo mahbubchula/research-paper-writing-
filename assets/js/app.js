@@ -1,449 +1,405 @@
 const timelineSteps = [
   {
     phase: "01",
-    title: "Strategic positioning",
-    focus: "Diagnose the gap, decision context, and contribution map before typing a single paragraph.",
+    title: "Plan the story",
+    focus: "Pick the journal and write a one-paragraph promise before drafting anything.",
     highlights: [
-      "Define audience personas (editor, reviewer, practitioner) and their success metrics.",
-      "Audit top journals for scope fit, median review time, and formatting quirks.",
-      "Draft research questions or hypotheses and link them to national or disciplinary agendas."
+      "Check the journal scope, word limit, template, and submission fees.",
+      "List the audience: editor, three reviewers, practitioner or policy reader.",
+      "Write the problem, gap, and contribution bullets in your own words."
     ]
   },
   {
     phase: "02",
-    title: "Evidence stack",
-    focus: "Engineer the data, sources, and theoretical scaffolding that make findings trustworthy.",
+    title: "Collect evidence",
+    focus: "Secure data, approvals, and background reading so nothing surprises you later.",
     highlights: [
-      "Log instruments, archival sources, human subjects approvals, or computational resources.",
-      "Plan ethics, consent, and reproducibility statements in parallel with experiments.",
-      "Map each research question to the datasets, participant groups, or textual corpora that will answer it."
+      "Record where data comes from, who owns it, and how others can access it.",
+      "Log ethics approvals, consent forms, letters of support, or archival permissions.",
+      "Create a literature table with author, method, finding, and weakness columns."
     ]
   },
   {
     phase: "03",
-    title: "Method architecture",
-    focus: "Design analytical pipelines, validation loops, and robustness narratives.",
+    title: "Build and test methods",
+    focus: "Explain every step clearly enough that a friend could repeat it.",
     highlights: [
-      "Specify baselines, controls, comparison groups, or counterfactuals.",
-      "Decide on statistical tests, effect sizes, ablations, and visualization formats.",
-      "Capture software stacks, lab conditions, or qualitative coding protocols for transparency."
+      "Note tools, software versions, lab conditions, interview guides, or survey links.",
+      "Decide how you will double-check quality: baselines, triangulation, pilot test, or simulation.",
+      "Store interim results, screenshots, figures, and tables in organized folders."
     ]
   },
   {
     phase: "04",
-    title: "Narrative build",
-    focus: "Draft IMRaD sections, figures, and tables with reviewer prompts in mind.",
+    title: "Write the manuscript",
+    focus: "Draft each section with a purpose sentence, supporting evidence, and a link to the big idea.",
     highlights: [
-      "Storyboard figures to ensure every claim is backed by a visual, table, or quotation.",
-      "Edit for voice consistency, tense, and transitions between evidence and interpretation.",
-      "Insert callouts for policy, design, or theoretical implications as you write."
+      "Follow the blueprint cards so you do not miss any required paragraph.",
+      "Add figures and tables while you write, not at the end.",
+      "Use the prompts to keep language active and precise."
     ]
   },
   {
     phase: "05",
-    title: "Submission intelligence",
-    focus: "Assemble the kit: cover letter, highlights, data availability, response shell, and compliance documents.",
+    title: "Submit and respond",
+    focus: "Prepare the upload kit, press submit, then get ready for reviewer letters.",
     highlights: [
-      "Cross-check journal formatting templates and metadata requirements (ORCID, funding, conflicts).",
-      "Prepare a reviewer suggestion & conflict list grounded in recent citations.",
-      "Dry-run the response matrix so future revisions are faster."
+      "Fill in the journal checklist, cover letter, highlights, and author contribution table.",
+      "Suggest reviewers and list conflicted experts honestly.",
+      "Set up a response matrix template so revising becomes faster."
     ]
   }
 ];
 
 const foundationSignals = [
   {
-    title: "Scholarly positioning",
-    detail:
-      "In the first 700 words show mastery of the conversation: cite recent issues, contrast theories, and make the research gap explicit. Reviewers in every field check whether you know the canon."
+    title: "Clear reason",
+    detail: "State why the topic matters now using a number, a policy target, or a real-world consequence."
   },
   {
-    title: "Method transparency",
-    detail:
-      "Document sampling, instrumentation, model architectures, and qualitative protocols in reproducible terms. Include uncertainty bounds, assumptions, and validation partners."
+    title: "Real gap",
+    detail: "Explain what the best recent papers or projects missed and why that gap matters."
   },
   {
-    title: "Impact orientation",
-    detail:
-      "Translate technical gains into outcomes stakeholders care about: lives improved, energy saved, design principles updated, cultural insights surfaced."
+    title: "Trustworthy method",
+    detail: "Show how data was collected, how you checked quality, and how others can repeat the steps."
   },
   {
-    title: "Reproducibility & ethics",
-    detail:
-      "Declare data/code availability, preregistration numbers, ethics approvals, and limitations. Even humanities editors expect clarity on archival permissions or interview agreements."
+    title: "Useful impact",
+    detail: "Translate findings into one sentence for theory, one for practice, and one for society."
   }
 ];
 
 const blueprintSections = [
   {
     id: "title",
-    title: "Title, keywords, and abstract",
-    promise: "Announce novelty, context, and measurable outcomes in under 250 words.",
+    title: "Title, keywords, abstract",
+    promise: "Hook the reader with the problem, action, and result in one glance.",
     deliverables: [
-      "Title formula: Context | lever | measurable effect (e.g., \"Adaptive water-harvesting membranes increase yield by 32 percent\").",
-      "12-16 word keywords mixing methods (SEM, ethnography) and domain tags (hydrology, urban history).",
-      "Structured abstract: backdrop, gap, method, key numbers or insights, implication sentence."
+      "Title: {setting} + {tool or idea} + {result}. Example: \"Adaptive charging plan halves depot wait time\".",
+      "Keywords: 5-6 phrases including method (e.g., \"mixed methods\") and domain (e.g., \"sustainable transport\").",
+      "Abstract: 1) background, 2) gap, 3) method, 4) main number or insight, 5) why it matters."
     ],
-    metrics: "Problem magnitude, effect size, reference dataset, policy or design hook",
-    reviewerNotes: "Avoid marketing terms (breakthrough, revolutionary). Editors flag claims without validated data.",
-    phrases: ["This study isolates...", "Using a multi-site sample we show...", "Findings inform..."]
+    metrics: "Word limit, key statistic, named stakeholders",
+    reviewerNotes: "Include at least one percentage or concrete output. Avoid hype words like revolutionary.",
+    phrases: ["This paper examines...", "We apply...", "Results show...", "The findings help..."]
   },
   {
     id: "intro",
-    title: "Introduction & gap case",
-    promise: "Establish why the question matters now and why existing work cannot answer it.",
+    title: "Introduction",
+    promise: "Set the stage and tell the reader exactly what you will deliver.",
     deliverables: [
-      "Para 1: urgency or curiosity gap supported by statistics, citations, or authoritative statements.",
-      "Para 2: synthesis of recent attempts organized by lens (methods, geography, theory, archive).",
-      "Para 3: explicit gap paragraph, then numbered contributions or hypotheses.",
-      "Para 4: outline of paper structure with reader promises."
+      "Paragraph 1: problem in numbers or vivid story.",
+      "Paragraph 2: what others tried recently (3-4 grouped citations).",
+      "Paragraph 3: gap sentence + why the gap matters.",
+      "Paragraph 4: contribution bullets and paper roadmap."
     ],
-    metrics: "Citation freshness, alignment with journal aims, clarity of contribution statements",
-    reviewerNotes: "Q1 reviewers expect verbs like \"This paper contributes...\" not implied contributions.",
-    phrases: ["Yet existing studies remain silent about...", "We demonstrate three advances...", "Accordingly, we ask..."]
+    metrics: "Fresh references (last 5 years), explicit contribution verbs",
+    reviewerNotes: "Spell out the gap: \"However, no study has...\"",
+    phrases: ["Despite progress...", "This study adds...", "We organize the rest of the paper as..."]
   },
   {
     id: "lit",
-    title: "Literature, theory, or conceptual frame",
-    promise: "Show how your argument extends, contests, or integrates prior scholarship.",
+    title: "Background or theory",
+    promise: "Summarize what is known and build the logic for your approach.",
     deliverables: [
-      "Cluster literature visually (table, concept map) to highlight methodological or epistemic gaps.",
-      "Explain theoretical lens selection and competing explanations you reject.",
-      "Tie constructs to measurable indicators or qualitative codes you will later operationalize."
+      "Group literature by theme, method, geography, or era.",
+      "Explain how key theories or frameworks guide your research questions.",
+      "Highlight disagreements or blind spots you are addressing."
     ],
-    metrics: "Breadth across disciplines, depth on seminal works, conceptual clarity",
-    reviewerNotes: "Interdisciplinary work must still anchor to a primary disciplinary conversation for reviewers to evaluate.",
-    phrases: ["Building on the framework of...", "Contrary to canonical interpretations...", "We synthesize..."]
+    metrics: "Balance of classic and new sources, clear subheadings",
+    reviewerNotes: "A diagram or table often communicates gaps faster than long paragraphs.",
+    phrases: ["Prior work shows...", "Table 1 compares...", "Figure 2 summarizes..."]
   },
   {
     id: "method",
-    title: "Methods, data, and materials",
-    promise: "Expose how evidence was generated, curated, and analyzed so peers can reproduce it.",
+    title: "Methods & data",
+    promise: "Give enough detail so another team could repeat the study.",
     deliverables: [
-      "Participants, corpus, dataset, or artifact description including inclusion/exclusion rules.",
-      "Instrumentation, lab workflow, or computational pipelines with references to protocols or repositories.",
-      "Validation: controls, baselines, intercoder reliability, statistical power, or simulation burn-in.",
-      "Ethics: consent, anonymization, bias mitigation, archival licensing."
+      "Describe participants, sites, datasets, instruments, or archives.",
+      "List software, equipment, survey questions, interview prompts, or lab steps.",
+      "Explain validation (baselines, pilot test, intercoder reliability, significance tests).",
+      "State ethics approvals, consent processes, and how sensitive data is protected."
     ],
-    metrics: "Sample size, statistical power, reliability coefficients, computational budget",
-    reviewerNotes: "Use subheadings (Data, Procedure, Analysis) for readability, even in humanities submissions.",
-    phrases: ["We operationalized...", "The protocol followed...", "Robustness checks include..."]
+    metrics: "Sample size, parameter settings, reliability values, script links",
+    reviewerNotes: "Use subheadings like Data / Procedure / Analysis for easy scanning.",
+    phrases: ["Data came from...", "We processed...", "We tested quality by..."]
   },
   {
     id: "results",
-    title: "Results & analysis",
-    promise: "Report findings in logical order and quantify uncertainty.",
+    title: "Results",
+    promise: "Report what happened without over-interpreting.",
     deliverables: [
-      "Present figures/tables immediately after referencing them with numeric narration.",
-      "Note statistical significance, confidence intervals, or thematic saturation thresholds.",
-      "Contrast findings with expectations, theoretical priors, or stakeholder benchmarks.",
-      "For qualitative work, include representative quotes with metadata (site, participant)."
+      "Introduce the figure or table before showing numbers.",
+      "State the result with a clear comparison (baseline vs new method, before vs after).",
+      "Add uncertainty info: confidence interval, p-value, effect size, or narrative about strength.",
+      "For qualitative work, include short quotes with who/where labels."
     ],
-    metrics: "Effect sizes, p-values or Bayes factors, thematic coverage, interpretability cues",
-    reviewerNotes: "Avoid combining interpretation with results; keep speculation for Discussion.",
-    phrases: ["We observe that...", "Quantitatively, this means...", "The motif recurs when..."]
+    metrics: "Effect sizes, p-values, saturation counts, visual references",
+    reviewerNotes: "Use consistent units and decimal places across figures and text.",
+    phrases: ["Compared to...", "We observed...", "Participants noted..."]
   },
   {
     id: "discussion",
-    title: "Discussion & implications",
-    promise: "Translate analysis into theory, practice, and societal meaning.",
+    title: "Discussion",
+    promise: "Tell readers what the results mean and why they matter.",
     deliverables: [
-      "Connect results back to research questions and frameworks, explaining surprises.",
-      "Deliver implications for three layers: discipline, cross-sector practitioners, and future research.",
-      "Surface limitations (data drift, contextual bounds) and mitigation strategies.",
-      "Offer conceptual, methodological, or design extensions readers can test."
+      "Explain how findings answer each research question or hypothesis.",
+      "Compare your findings to earlier studies (agree, extend, or disagree).",
+      "List practical steps people can take because of your work.",
+      "Be honest about limits and what still needs testing."
     ],
-    metrics: "Generality of claims, transferability scenarios, limitation transparency",
-    reviewerNotes: "One paragraph on limitations is insufficient; integrate throughout Discussion for credibility.",
-    phrases: ["For theorists, this shifts...", "Practitioners can adapt...", "A limitation of this study..."]
+    metrics: "Number of research questions answered, number of specific actions",
+    reviewerNotes: "Tie each limitation to a plan (future data, different site, longer horizon).",
+    phrases: ["This means that...", "Unlike previous work...", "Practitioners should..."]
   },
   {
     id: "conclusion",
-    title: "Conclusion & future track",
-    promise: "Close the loop with a concise recap and forward-looking agenda.",
+    title: "Conclusion",
+    promise: "Finish with a short recap and next steps.",
     deliverables: [
-      "Remind readers of objectives, method, and highest-impact finding in 3 sentences.",
-      "State readiness level: deployable, prototype, conceptual.",
-      "Outline tangible next steps (e.g., multi-country cohort, longitudinal follow-up, design iteration).",
-      "Reiterate commitments to data/code availability and collaboration invites."
+      "1-2 sentences restating the purpose and method.",
+      "1-2 sentences highlighting the strongest number or insight again.",
+      "1 sentence about how the work can grow (new city, more participants, deeper theory).",
+      "1 sentence inviting collaboration or data/code reuse."
     ],
-    metrics: "Clarity, brevity, call-to-action strength",
-    reviewerNotes: "Do not introduce new references or data in the conclusion.",
-    phrases: ["This work positions...", "Future studies should...", "We invite collaborators to..."]
+    metrics: "Brevity (150-200 words), clear invitation",
+    reviewerNotes: "Do not add new references here; keep it focused on your paper.",
+    phrases: ["In summary...", "We recommend...", "Future work will..."]
   },
   {
     id: "supplement",
-    title: "Supplementary, compliance, and artifacts",
-    promise: "Deliver transparency artifacts that accelerate acceptance.",
+    title: "Extras & transparency",
+    promise: "Show that you can back up every claim.",
     deliverables: [
-      "Graphical abstract or TOC figure summarizing pipeline and outcomes.",
-      "Data, code, interview guides, or CAD files deposited with DOIs.",
-      "Author contribution table (CRediT) plus funding, conflict, and ethics statements.",
-      "Optional video/audio abstract for journals that require it."
+      "Graphical abstract or flow diagram that links problem ? method ? result.",
+      "Data/code availability statement with links or contact info.",
+      "Author contribution table (CRediT) plus funding and conflict statements.",
+      "Optional: short video or audio abstract (many Q1 journals ask for this)."
     ],
-    metrics: "FAIR compliance, documentation depth, metadata completeness",
-    reviewerNotes: "Attach repository links in both the manuscript and cover letter.",
-    phrases: ["Data are stored at...", "Code executes via...", "CRediT contributions follow..."]
+    metrics: "Repository link, DOI, checklist completion",
+    reviewerNotes: "If data is confidential, explain how others can request access.",
+    phrases: ["Data are available at...", "Code runs via...", "Author X led..."]
   }
 ];
 
 const dossierBlocks = [
   {
-    title: "Graphical abstract & highlights",
+    title: "Highlights & visuals",
     items: [
-      "3-4 highlight bullets using verbs + numbers (e.g., \"Cuts training time by 41 percent\").",
-      "Vector-based graphical abstract that shows flow from problem to outcome.",
-      "Table of contents figure resized per journal specs (often 560 x 1100 px)."
+      "3 bullet highlights using verb + number (e.g., \"Cuts waiting time by 42%\").",
+      "Graphical abstract sized to journal instructions.",
+      "Table-of-contents image or plain figure that tells the story in one frame."
     ],
-    tip: "Design visuals in dark/light variants so they work for both PDF and web layouts."
+    tip: "Finish highlights only after the results are final so numbers are consistent."
   },
   {
-    title: "Data, code, and materials availability",
+    title: "Data, code, and materials",
     items: [
-      "Repository with README detailing file structure, software versions, and licenses.",
-      "Anonymized or synthetic dataset plus provenance statement.",
-      "Materials appendix covering lab reagents, survey instruments, or archival catalogs."
+      "README that lists folders, prerequisites, and how to run scripts.",
+      "Datasets or transcripts with identifiers removed plus a note about licenses.",
+      "Extra materials such as survey forms, interview guides, CAD files, or lab recipes."
     ],
-    tip: "Link persistent identifiers (DOI, Handle) in manuscript and cover letter to avoid desk rejections."
+    tip: "If something cannot be shared, state the reason and give a contact email."
   },
   {
-    title: "Cover letter & editor briefing",
+    title: "Cover letter",
     items: [
-      "Paragraph 1: novelty, urgency, and alignment with journal scope.",
-      "Paragraph 2: author highlights (prior work, collaborations, data availability).",
-      "Paragraph 3: reviewer suggestions (names, expertise, emails) plus conflict list."
+      "Paragraph 1: problem + why the journal audience should care now.",
+      "Paragraph 2: summary of method and top-line result.",
+      "Paragraph 3: fit with journal scope plus suggested reviewers and conflict list."
     ],
-    tip: "Mirror the journal's language and mention any special issues or calls you are targeting."
+    tip: "Use the editor's name and mirror the journal's tone (formal but friendly)."
   },
   {
     title: "Compliance checklist",
     items: [
-      "Ethics approvals, IRB numbers, preregistration ID, or archival permissions.",
-      "CRediT contribution matrix and funding acknowledgments with grant numbers.",
-      "Conflict-of-interest, originality, and data-sharing declarations per journal portal."
+      "Ethics approval IDs, consent statements, preregistration links if relevant.",
+      "Funding numbers, author contribution table, competing interest statements.",
+      "Similarity report, figure permissions, or media releases if required."
     ],
-    tip: "Convert checklists into a single PDF so editors are not chasing multiple uploads."
+    tip: "Store all proofs (PDFs, screenshots) in one folder to reuse for future submissions."
   }
 ];
 
 const domainData = {
   experimental: {
     title: "Experimental & natural sciences",
-    tagline: "Emphasize reproducibility, calibration, and uncertainty budgets.",
-    dataset: [
-      "Instrument logs, lab notebooks, omics repositories",
-      "Calibration curves, environmental controls, reference samples",
-      "Preregistrations, standard operating procedures"
-    ],
+    tagline: "Stress reproducibility, calibration, and safety.",
+    dataset: ["Lab notebooks", "Sensor or instrument logs", "Standard reference samples"],
     angle: [
-      "Quantify measurement error and detection limits.",
-      "Report replication attempts or cross-lab validation.",
-      "Link findings to standards (ISO, ASTM, WHO) or global targets."
+      "Explain how you calibrated instruments and tracked uncertainty.",
+      "Share whether another lab has repeated the steps or plans to.",
+      "Connect results to known standards (ISO, WHO, ASTM)."
     ],
     impact: [
-      "Technique increases sensitivity by 2.3x vs leading assay.",
-      "Protocol reduces reagent cost by 18 percent.",
-      "Findings update safety thresholds adopted by regulators."
+      "Method improves detection limit by 2×",
+      "Protocol cuts reagent cost by 18%",
+      "Guideline update adopted by safety board"
     ],
-    policy: "Anchor claims in recognized bodies (Nature Portfolio, ACS, IEEE) and detail biosafety compliance."
+    policy: "Mention biosafety level, waste handling, or open-science mandates."
   },
   computational: {
-    title: "Computational & data sciences",
-    tagline: "Balance accuracy with interpretability and governance.",
-    dataset: [
-      "Benchmark datasets, synthetic corpora, federated nodes",
-      "Compute budget disclosures (GPU hours, carbon reporting)",
-      "Model cards, dataset statements, reproducible scripts"
-    ],
+    title: "Computational & data science",
+    tagline: "Balance accuracy with clarity and responsible AI use.",
+    dataset: ["Benchmark datasets", "Synthetic data generators", "Compute budget logs"],
     angle: [
-      "Contrast with strong baselines, ablations, and zero-shot tests.",
-      "Address fairness, privacy, and hardware portability.",
-      "Discuss human-in-the-loop evaluation or domain expert review."
+      "Compare against strong baselines, ablations, and zero-shot tests.",
+      "Share model cards, dataset statements, and fairness checks.",
+      "State runtime, hardware needs, and carbon estimates."
     ],
     impact: [
-      "Reduces inference latency to 42 ms on commodity hardware.",
-      "Improves macro F1 by 8 points on imbalanced classes.",
-      "Toolkit open-sourced under a permissive license."
+      "Macro-F1 improves by 8 points",
+      "Latency drops to 40 ms on CPU",
+      "Code released under MIT license"
     ],
-    policy: "Reference AI governance frameworks (NIST, ISO/IEC, open science mandates)."
+    policy: "Refer to NIST, ISO/IEC, or national data governance rules."
   },
   design: {
-    title: "Design, architecture, and engineering",
-    tagline: "Stress prototyping cycles, user feedback, and performance metrics.",
-    dataset: [
-      "CAD/BIM models with parameters",
-      "User studies, ergonomic assessments, participatory workshops",
-      "Lifecycle inventories, cost models, structural analyses"
-    ],
+    title: "Design, architecture, engineering",
+    tagline: "Show iteration, user testing, and performance numbers.",
+    dataset: ["CAD/BIM files", "User feedback logs", "Lifecycle cost spreadsheets"],
     angle: [
-      "Showcase iteration count, failure modes, and redesign triggers.",
-      "Tie aesthetics or usability choices to theory and standards.",
-      "Quantify sustainability and resilience outcomes."
+      "Describe prototype versions and what changed after each test.",
+      "Link design choices to building codes or ergonomic standards.",
+      "Quantify sustainability, safety, or cost savings."
     ],
     impact: [
-      "Prototype halves fabrication time without sacrificing safety.",
-      "User satisfaction scores climb from 3.1 to 4.5/5.",
-      "Lifecycle emissions drop 27 percent compared with baseline."
+      "Fabrication time cut in half",
+      "User satisfaction jumps from 3.1 to 4.5/5",
+      "Lifecycle emissions drop 27%"
     ],
-    policy: "Map implications to building codes, engineering guidelines, or procurement frameworks."
+    policy: "Tie recommendations to procurement rules or resilience plans."
   },
   social: {
-    title: "Social sciences, humanities, and policy",
-    tagline: "Highlight methodological reflexivity, thick description, and societal stakes.",
-    dataset: [
-      "Interview transcripts, ethnographic fieldnotes, archives",
-      "Surveys, administrative records, textual corpora",
-      "Participatory action research artifacts"
-    ],
+    title: "Social sciences & humanities",
+    tagline: "Highlight context, voices, and ethical care.",
+    dataset: ["Interview transcripts", "Archives", "Community surveys"],
     angle: [
-      "Clarify positionality and researcher reflexivity.",
-      "Detail coding schemes, triangulation, and audit trails.",
-      "Connect insights to policy cycles, jurisprudence, or cultural debates."
+      "Explain positionality and how you earned trust.",
+      "Describe coding steps, triangulation, and audit trails.",
+      "Link insights to policies, curricula, or cultural debates."
     ],
     impact: [
-      "Legislative committee cites findings in hearing.",
-      "Community adoption of recommendations within six months.",
-      "Archives digitized for open cultural access."
+      "Policy brief cited in parliament",
+      "Community uses toolkit within 6 months",
+      "Heritage archive digitized for public use"
     ],
-    policy: "Point to SDGs, UNESCO, OECD, or national policy briefs that benefit from the work."
+    policy: "Point to SDGs, UNESCO priorities, or national policy windows."
   }
 };
 
 const methodBlocks = [
   {
-    title: "Mixed-method evidence loops",
+    title: "Mixed methods",
     tactics: [
-      "Pair quantitative trends with qualitative narratives to explain mechanisms.",
-      "Use joint displays that align statistics with quotes or design artifacts.",
-      "Document integration timing (exploratory, explanatory, convergent)."
+      "Show how numbers and stories speak to each other (diagram or table).",
+      "Explain when each part happens: quantitative first, qualitative first, or parallel.",
+      "Note who interpreted the combined insights to avoid bias."
     ]
   },
   {
-    title: "Reproducible computational pipelines",
+    title: "Transparent computing",
     tactics: [
-      "Containerize analysis (Docker, Conda) and log versions in the manuscript.",
-      "Include ablation diagrams showing where gains originate.",
-      "Quantify compute cost, memory footprint, and carbon emissions."
+      "Share scripts via GitHub/Zenodo and list required packages.",
+      "Add flowcharts or pseudocode for new algorithms.",
+      "Report runtime, memory, and energy cost."
     ]
   },
   {
-    title: "Design science & build-measure-learn",
+    title: "Design-build cycles",
     tactics: [
-      "Present design principles, instantiations, and evaluations explicitly.",
-      "State acceptance criteria for prototypes and how feedback informed revisions.",
-      "Blend technical validation with stakeholder co-creation evidence."
+      "List the design principles, prototype versions, and tests run on each.",
+      "Explain how user or stakeholder feedback changed the next build.",
+      "Provide acceptance criteria (strength, comfort, aesthetics, budget)."
     ]
   },
   {
-    title: "Evidence synthesis & meta-analysis",
+    title: "Evidence synthesis",
     tactics: [
-      "Explain search strategy, screening criteria, and effect models.",
-      "Assess publication bias and heterogeneity.",
-      "Translate pooled effects into practitioner-ready recommendations."
+      "Describe search strings, inclusion rules, and screening counts.",
+      "Show how you judged study quality or risk of bias.",
+      "Translate pooled findings into simple recommendations."
     ]
   }
 ];
 
 const reviewStrategies = [
   {
-    title: "Desk evaluation filter",
-    summary: "Editors skim title, abstract, cover letter, compliance forms, and similarity reports within minutes.",
+    title: "Desk check",
+    summary: "Editors skim the abstract, cover letter, and checklists in minutes.",
     steps: [
-      "State journal fit explicitly and avoid scope drift.",
-      "Keep similarity index under thresholds (usually 18-20 percent).",
-      "Ensure figures, tables, references follow the latest template or LaTeX class."
+      "Mention journal fit in the cover letter and abstract.",
+      "Keep similarity index below the journal limit (usually &lt;20%).",
+      "Double-check figure labels, references, and template formatting."
     ],
-    tip: "If targeting a special issue, mention the guest editor and theme in the cover letter opening line."
+    tip: "If targeting a special issue, name it in sentence one of the cover letter."
   },
   {
-    title: "External peer review",
-    summary: "Three to four reviewers test novelty, rigor, interpretation, and completeness.",
+    title: "Peer review",
+    summary: "Reviewers test novelty, method strength, clarity, and impact.",
     steps: [
-      "Anticipate major questions: novelty, methodological sufficiency, result clarity, broader impacts.",
-      "Pre-build a response matrix with columns for comment, action, manuscript location, gratitude.",
-      "Highlight reproducibility assets (links, appendices) whenever reviewers request more evidence."
+      "Predict the top 5 questions they will ask and answer them proactively in the text.",
+      "Point to data/code links whenever you claim reproducibility.",
+      "Stay polite and evidence-focused in all responses."
     ],
-    tip: "Never argue intent; respond with evidence, citations, or new experiments."
+    tip: "Thank reviewers for useful critiques even when you disagree."
   },
   {
-    title: "Revision cycles",
-    summary: "Most Q1 acceptances occur after one or two rounds of major revision.",
+    title: "Revision",
+    summary: "Most Q1 papers need at least one major revision.",
     steps: [
-      "Prioritize reviewer alignment before technical edits; restate each comment in your own words.",
-      "Use change tracking tables that cite section, line numbers, and new references.",
-      "Close letters with a meta-summary reminding reviewers of the manuscript's strengthened contributions."
+      "Copy each reviewer comment into a table and summarize your change beside it.",
+      "Highlight new or updated text with page/line numbers.",
+      "If you cannot do a request, explain why and offer another piece of evidence."
     ],
-    tip: "If a request is infeasible, explain constraints transparently and propose alternative evidence."
+    tip: "Open the response letter with a short overview of the main improvements."
   },
   {
-    title: "Post-acceptance readiness",
-    summary: "Proofs, data deposits, and outreach happen fast; prepare assets early.",
+    title: "After acceptance",
+    summary: "Production moves fast, so prepare assets early.",
     steps: [
-      "Have high-resolution figures (TIFF/SVG) and video abstracts ready.",
-      "Confirm ORCID links, funding statements, and author order before proofs arrive.",
-      "Draft social media or press copy aligned with journal embargo rules."
+      "Have high-resolution figures ready (TIFF/SVG as required).",
+      "Confirm author order, ORCID, funding numbers before proofs arrive.",
+      "Draft outreach copy (tweet, LinkedIn post, press note) respecting embargo rules."
     ],
-    tip: "Archive final materials with version tags (submitted, revised, accepted) for future reference."
+    tip: "Save accepted files in a \"camera ready\" folder for future reference."
   }
 ];
 
 const qualityGates = [
-  {
-    title: "Novelty proof",
-    detail: "Explicit contrast with state of the art plus contribution bullets complete."
-  },
-  {
-    title: "Method transparency",
-    detail: "All parameters, instruments, coding rubrics, and software versions documented."
-  },
-  {
-    title: "Impact translation",
-    detail: "Implications for theory, practice, and society articulated with evidence."
-  },
-  {
-    title: "Ethics & compliance",
-    detail: "IRB, consent, archival permissions, and conflicts compiled."
-  },
-  {
-    title: "Language & visuals",
-    detail: "Plain, active sentences, figure captions with interpretation, consistent tense."
-  },
-  {
-    title: "Submission kit locked",
-    detail: "Cover letter, highlights, graphical abstract, checklist, response matrix exported."
-  }
+  { title: "Problem + gap clear", detail: "Someone outside your field can explain why the work matters." },
+  { title: "Method repeatable", detail: "All parameters, scripts, or protocols documented and stored." },
+  { title: "Results supported", detail: "Claims match figures/tables with numbers or quotes." },
+  { title: "Impact explained", detail: "Theory, practice, and society paragraphs written." },
+  { title: "Ethics complete", detail: "Approvals, consent, conflicts, and funding statements included." },
+  { title: "Submission kit ready", detail: "Cover letter, highlights, graphical abstract, checklist, response matrix exported." }
 ];
 
 const promptBlocks = [
   {
-    title: "High-stakes context",
-    prompt:
-      "Across {context or discipline}, {trusted source} reports {statistic}. Without {innovation/action}, {stakeholder} faces {risk or missed opportunity}."
+    title: "Problem hook",
+    prompt: "In {place/field}, {trusted source} reports {statistic}. If nothing changes, {stakeholder} will face {risk/consequence}."
   },
   {
-    title: "Knowledge gap",
-    prompt:
-      "Prior {studies/theories} resolve {aspect} using {approach}, yet {limitation} persists because {reason}."
+    title: "Gap statement",
+    prompt: "Earlier studies focused on {approach}, but they did not answer {missing question} because {reason}."
   },
   {
     title: "Research objective",
-    prompt:
-      "We investigate {phenomenon} by {method/approach} to determine {outcome metric}, expecting {hypothesis or proposition}."
+    prompt: "We aim to {action} by using {data/method}. This will test whether {expected outcome}."
   },
   {
-    title: "Method clarity",
-    prompt:
-      "Evidence derives from {sample/dataset/archives} with {size/coverage}. We analyze it via {tool/protocol}, controlling for {confounders}."
+    title: "Method snapshot",
+    prompt: "Evidence comes from {dataset/participants/sites}. We processed it with {tool/procedure} and checked quality by {validation}."
   },
   {
-    title: "Finding articulation",
-    prompt:
-      "Compared with {baseline/perspective}, the proposed {method/intervention} changes {metric/interpretation} by {value}, indicating {insight}."
+    title: "Result sentence",
+    prompt: "Compared with {baseline}, our approach changed {metric/experience} by {value}, which means {interpretation}."
   },
   {
-    title: "Implication & future",
-    prompt:
-      "For {discipline/practice}, the findings imply {action}. Future work will {extension} to test {new condition}."
+    title: "Practical implication",
+    prompt: "For {user/policy group}, the findings suggest {action} so that {benefit}."
   }
 ];
 
@@ -494,7 +450,7 @@ function renderBlueprint() {
   blueprintSections.forEach((section, index) => {
     const card = createEl("article", "card section-card");
     card.dataset.section = section.id;
-    const eyebrow = createEl("p", "eyebrow", `Phase ${index + 1}`);
+    const eyebrow = createEl("p", "eyebrow", `Step ${index + 1}`);
     const title = createEl("h3", null, section.title);
     const promise = createEl("p", null, section.promise);
 
@@ -505,20 +461,20 @@ function renderBlueprint() {
       deliverList.appendChild(li);
     });
 
-    const toggle = createEl("button", null, "Deep Dive");
+    const toggle = createEl("button", null, "Show details");
     toggle.setAttribute("aria-expanded", "false");
 
     const panel = createEl("div", "card__panel");
     panel.innerHTML = `
-      <p><strong>Metrics reviewers expect:</strong> ${section.metrics}</p>
-      <p><strong>Reviewer note:</strong> ${section.reviewerNotes}</p>
-      <p><strong>Power phrases:</strong> ${section.phrases.join(", ")}</p>
+      <p><strong>What reviewers track:</strong> ${section.metrics}</p>
+      <p><strong>Reminder:</strong> ${section.reviewerNotes}</p>
+      <p><strong>Helpful phrases:</strong> ${section.phrases.join(", ")}</p>
     `;
 
     toggle.addEventListener("click", () => {
       const open = card.classList.toggle("open");
       toggle.setAttribute("aria-expanded", String(open));
-      toggle.textContent = open ? "Hide guidance" : "Deep Dive";
+      toggle.textContent = open ? "Hide details" : "Show details";
     });
 
     card.append(eyebrow, title, promise, deliverList, toggle, panel);
@@ -566,15 +522,15 @@ function updateDomainPanel(key) {
     <p>${domain.tagline}</p>
     <div class="grid">
       <div>
-        <p class="eyebrow">Evidence sources</p>
+        <p class="eyebrow">Evidence to highlight</p>
         <ul>${domain.dataset.map((item) => `<li>${item}</li>`).join("")}</ul>
       </div>
       <div>
-        <p class="eyebrow">Angles reviewers scan</p>
+        <p class="eyebrow">Angles to stress</p>
         <ul>${domain.angle.map((item) => `<li>${item}</li>`).join("")}</ul>
       </div>
       <div>
-        <p class="eyebrow">Impact statements</p>
+        <p class="eyebrow">Sample impact lines</p>
         <ul>${domain.impact.map((item) => `<li>${item}</li>`).join("")}</ul>
       </div>
     </div>
@@ -652,4 +608,5 @@ renderMethodLab();
 renderReview();
 renderQualityList();
 renderPrompts();
+
 
